@@ -1,0 +1,240 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sampleui="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:wowza="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ff000000"
+    tools:context=".TripTalk.PlayALiveActivity">
+
+    <com.wowza.gocoder.sdk.api.player.WOWZPlayerView
+        android:id="@+id/vwStreamPlayer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentStart="false"
+        android:layout_centerInParent="true" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="false"
+        android:layout_gravity="end|center_vertical"
+        android:background="#00ffffff"
+        android:clickable="false"
+        android:padding="10dp"
+        android:textAlignment="center">
+
+        <!--   <com.example.tripshare.LiveStream.ui.MultiStateButton
+               android:visibility="gone"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/ic_mic"
+               android:src="@drawable/ic_speaker_on"
+               sampleui:offSrc="@drawable/ic_speaker_off"
+               android:onClick="onToggleMute"
+               android:background="#000000ff"
+               android:contentDescription="Mute"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentTop="true"/>
+
+           <SeekBar
+               android:visibility="gone"
+               android:layout_width="250dip"
+               android:layout_height="wrap_content"
+               android:layout_alignParentTop="true"
+               android:layout_centerVertical="false"
+               android:layout_toEndOf="@+id/ic_mic"
+               android:layout_centerHorizontal="false"
+               android:layout_centerInParent="false"
+               android:max="100"
+               android:id="@+id/sb_volume"/>
+
+           <com.example.tripshare.LiveStream.ui.MultiStateButton
+               android:visibility="gone"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/ic_scale"
+               android:src="@drawable/ic_scale_fill_view"
+               sampleui:offSrc="@drawable/ic_scale_keep_aspect"
+               android:onClick="onToggleScaleMode"
+               android:background="#000000ff"
+               android:contentDescription="Scale"
+               android:layout_alignParentEnd="true"
+               android:layout_alignParentTop="true"/>
+
+           <com.example.tripshare.LiveStream.ui.TimerView
+               android:visibility="gone"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="00:00:00"
+               android:id="@+id/txtTimer"
+               android:background="@drawable/rounded_corner"
+               android:textColor="#ffffff"
+               android:textStyle="bold"
+               android:typeface="normal"
+               android:textAppearance="@android:style/TextAppearance.Medium"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentBottom="true"/>
+
+           <ImageButton
+               android:id="@+id/imgBtnStreamInfo"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@android:color/transparent"
+               android:layout_alignParentEnd="true"
+               android:layout_alignParentBottom="true"
+               android:onClick="onStreamMetadata"
+               android:visibility="gone"
+               android:src="@drawable/ic_stream_info"/>-->
+        <!--
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onPauseNetwork"
+                    android:id="@+id/pause_network"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="false"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="25dp"
+                    android:visibility="gone"
+                    android:text="Pause Network" />-->
+
+
+        <com.example.tripshare.LiveStream.ui.MultiStateButton
+            android:id="@+id/ic_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="#000000ff"
+            android:onClick="onSettings"
+            android:src="@drawable/ic_settings" />
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linearchat_player"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/end_hidechat_linear_player"
+                android:layout_alignParentStart="true"
+                android:orientation="vertical">
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/chat_recy_player"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+
+                <LinearLayout
+                    android:id="@+id/chat_linear_player"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+
+                    <EditText
+                        android:id="@+id/chat_edit_player"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:hint="메세지를 입력해주세요."
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/chat_send_player"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_send_black_24dp" />
+
+                    <ImageView
+                        android:id="@+id/chat_heart_player"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/hearts" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/end_hidechat_linear_player"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <com.example.tripshare.LiveStream.ui.MultiStateButton
+                    android:id="@+id/ic_end_stream"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#000000ff"
+                    android:cropToPadding="false"
+                    android:src="@drawable/ic_stop" />
+
+                <ImageView
+                    android:id="@+id/tokensend_img_onair"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/token_onair_36dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heart_lottie_player"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="right|bottom"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="130dp"
+            tools:ignore="RtlHardcoded" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/token_lottie_player"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="left|bottom"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="130dp"
+            tools:ignore="RtlHardcoded" />
+
+
+    </FrameLayout>
+
+
+    <com.example.tripshare.LiveStream.ui.StatusView
+        android:id="@+id/statusView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="0dp"
+        android:visibility="invisible">
+
+    </com.example.tripshare.LiveStream.ui.StatusView>
+
+</RelativeLayout>

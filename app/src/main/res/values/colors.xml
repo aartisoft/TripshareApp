@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#66C8F3</color>
+    <color name="colorPrimaryDark">#FF9800</color>
+    <color name="colorAccent">#FFF12222</color>
+    <color name="white">#ffffff</color>
+    <color name="darkgray">#4E4E4E</color>
+    <color name="gray">#B6B5B5</color>
+
+    <!--스트리밍 예제-->
+    <color name="dataTableRowBackground1">#00ffffff</color>
+    <color name="dataTableRowBackground2">#1affffff</color>
+    <color name="dataTableHeaderBackground">#1a1a1a</color>
+    <color name="dataTableSubHeaderBackground">#da212121</color>
+
+    <color name="controlButtonPressed">#80ff8400</color>
+    <color name="multiStateButtonPressed">#80ff8400</color>
+    <color name="multiStateButtonDisabled">#c1636363</color>
+    <!--이미지 필터-->
+    <color name="color_opton_menu">#FF3990</color>
+    <color name="selected_filter">#221f20</color>
+    <color name="normal_filter">#8a8889</color>
+    </resources>

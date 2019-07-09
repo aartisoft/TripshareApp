@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--<item-->
+        <!--android:id="@+id/check_friend_message"-->
+        <!--android:icon="@drawable/ic_friends"-->
+        <!--android:title="Right Side Menu"-->
+        <!--app:showAsAction="always"/>-->
+
+    <item
+        android:id="@+id/add_friend_message"
+        android:icon="@drawable/ic_person_add_black_24dp"
+        android:title="Right Side Menu"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/getout_message"
+        android:icon="@drawable/ic_close_black_24dp"
+        android:title="Right Side Menu"
+        app:showAsAction="always"/>
+
+</menu>

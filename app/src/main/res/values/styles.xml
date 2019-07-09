@@ -1,0 +1,99 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#1B4AFA</item>
+        <item name="colorPrimaryDark">#C5C5E6</item>
+        <item name="colorAccent">#FFF12222</item>
+
+    </style>
+
+    <style name="AppThemeNobar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#0066CC</item>
+        <item name="colorPrimaryDark">#818181</item>
+        <item name="colorAccent">#0066CC</item>
+    </style>
+
+    <style name="AppThemefortool" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#7591FF</item>
+        <item name="colorPrimaryDark">#7591FF</item>
+        <item name="colorAccent">#FFF12222</item>
+    </style>
+
+
+    <style name="Picture" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#494949</item>
+        <item name="colorPrimaryDark">#494949</item>
+        <item name="colorAccent">#FFF12222</item>
+    </style>
+    <!--<style name="myDialog" parent="Theme.AppCompat.Dialog">-->
+        <!--<item name="android:windowNoTitle">true</item>-->
+    <!--</style>-->
+
+    <style name="AppTheme.Call" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!--스트리밍 예제-->
+
+    <style name="ConfigTheme" parent="android:Theme.Holo.Light">
+
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+
+    </style>
+
+    <style name="DataTableTheme" parent="android:Theme.Holo.Light">
+    </style>
+
+    <style name="DataHeaderTheme" parent="android:Theme.Holo.Light">
+        <item name="android:background">#000</item>
+    </style>
+
+    <style name="DataTableHeaderAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DataTableSubHeaderAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
+    <style name="DataTableLabelAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="DataTableValueAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#fff</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <style name="myDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+    <!--이미지 필터 예제-->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.NoActionBar.FullScreen">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:actionMenuTextColor">@color/color_opton_menu</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="Theme.AppCompat.Light"/>
+    <style name="AppTheme.PopupOverlay" parent="Theme.AppCompat.Light"/>
+</resources>

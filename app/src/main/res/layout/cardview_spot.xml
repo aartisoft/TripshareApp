@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView_hotspot"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="2dp"
+    card_view:cardCornerRadius="0dp"
+    card_view:cardElevation="2dp">
+
+
+    <LinearLayout
+        android:id="@+id/linLayout_spot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp">
+
+
+        <ImageView
+            android:id="@+id/place_img_spot"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/circleimage"
+            android:layout_marginBottom="1dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:id="@+id/name_cardview_spot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="이름"
+                android:textSize="15dp"
+                android:textColor="@color/darkgray"
+                    android:textStyle="bold"
+                android:layout_marginLeft="8dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/rate_cardview_spot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="평점,"
+                android:textColor="@color/darkgray"
+                android:textSize="13dp"
+                android:textStyle="normal"
+                android:layout_marginLeft="8dp" />
+
+                <TextView
+                    android:id="@+id/total_cardview_spot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="일정에 등록된 총 횟수"
+                    android:textColor="@color/darkgray"
+                    android:textSize="13dp"
+                    android:textStyle="normal"
+                    android:layout_marginLeft="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/category_cardview_spot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="평가 수"
+                android:textColor="@color/darkgray"
+                android:textSize="13dp"
+                android:textStyle="normal"
+                android:layout_marginLeft="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

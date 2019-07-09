@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckedTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/checedtx"
+    android:singleLine="true"
+    android:textSize="30dp"
+    style="?android:attr/spinnerDropDownItemStyle"
+    android:textColor="#000000"
+    android:background="@color/colorPrimary"
+    >
+
+</CheckedTextView>

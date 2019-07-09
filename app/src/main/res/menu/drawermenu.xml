@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/plus" android:title="여행 계획 등록" android:icon="@drawable/ic_airplanemode_active_black_24dp" />
+    <item android:id="@+id/chat" android:title="트립톡" android:icon="@drawable/ic_chat_black_24dp" />
+    <item android:id="@+id/ar" android:title="AR" android:icon="@drawable/ic_videocam_black_24dp" />
+    <item android:id="@+id/ethereum" android:title="이더리움" android:icon="@drawable/ic_attach_money_black_24dp"/>
+    <item android:id="@+id/game" android:title="게임" android:icon="@drawable/ic_person_add_black_24dp"/>
+    <item android:id="@+id/logout" android:title="로그아웃" android:icon="@drawable/ic_exit_to_app_black_24dp" />
+
+</menu>

@@ -1,0 +1,217 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+     /*sourceSets.main {
+        jniLibs.srcDir 'src/main/libs'
+        jni.srcDirs = [] //disable automatic ndk-build call
+    }*/
+    dataBinding {
+        enabled = true
+    }
+    lintOptions {
+        abortOnError false
+    }
+    aaptOptions {
+        noCompress = ['.unity3d', '.ress', '.resource', '.obb', 'vuforia/movie.dat', 'vuforia/movie.xml', 'vuforia/vuforiamars_images.dat', 'vuforia/vuforiamars_images.xml', 'vuforia/vuforiamars_modeltarget.dat', 'vuforia/vuforiamars_modeltarget.xml', 'vuforia/vuforiamars_object_ot.dat', 'vuforia/vuforiamars_object_ot.xml', 'vuforia/vuforiamars_vumark.dat', 'vuforia/vuforiamars_vumark.xml', 'vuforia/vuforia_motorcycle_marslander.dat', 'vuforia/vuforia_motorcycle_marslander.xml']
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        applicationId "com.example.tripshare"
+        minSdkVersion 24
+        targetSdkVersion 28
+        versionCode 1
+        versionName "8.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        resValue "string", "places_api_key", (project.findProperty("PLACES_API_KEY") ?: "AIzaSyBdGjUa3OSXHOInYWbLdBCDnS4pHjtGme8")
+        multiDexEnabled true
+        ndk {
+            abiFilters 'armeabi-v7a', 'x86'
+        }
+    }
+    sourceSets {
+        main {
+            assets.srcDirs += 'src/main/assets'
+            res.srcDirs += 'src/main/res'
+            jniLibs.srcDirs += 'src/main/jniLibs'
+            jni.srcDirs = [] //disable automatic ndk-build call
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
+            signingConfig signingConfigs.debug
+            jniDebuggable true
+        }
+        release {
+            minifyEnabled false
+            useProguard false
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro', 'proguard-unity.txt'
+        }
+    }
+
+    packagingOptions {
+        exclude 'lib/x86_64/darwin/libscrypt.dylib'
+        exclude 'lib/x86_64/freebsd/libscrypt.so'
+        exclude 'lib/x86_64/linux/libscrypt.so'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/INDEX.LIST'
+//        doNotStrip '*/armeabi-v7a/*.so'
+//        doNotStrip '*/x86/*.so'
+        /* exclude 'lib/armeabi-v7a/libarcore_sdk_jni.so'
+        exclude 'lib/x86/libarcore_sdk_jni.so'*/
+        pickFirst 'lib/armeabi-v7a/libarcore_sdk_c.so'
+        pickFirst 'lib/arm64-v8a/libarcore_sdk_jni.so'
+        pickFirst 'lib/armeabi-v7a/libarcore_sdk_jni.so'
+        pickFirst 'lib/arm64-v8a/libarcore_sdk_c.so'
+        pickFirst 'lib/x86/libarcore_sdk_c.so'
+        pickFirst 'lib/x86/libarcore_sdk_jni.so'
+        pickFirst 'META-INF/rxjava.properties'
+
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'x86_64', 'armeabi', 'armeabi-v7a', 'mips', 'mips64', 'arm64-v8a'
+            universalApk true
+        }
+    }
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            enableSplit = false
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+}
+
+dependencies {
+
+    implementation fileTree( dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:design:28.0.0'
+    //애니메이션
+    implementation 'com.airbnb.android:lottie:2.7.0'
+    //네트워크 연결
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    //카메라,갤러리 이미지 크롭
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.0'
+    //circle이미지뷰
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    //여행 기간 정하기
+    implementation 'com.squareup:android-times-square:1.6.5@aar'
+    // 카카오 로그인 sdk를 사용하기 위해 필요.
+    implementation group: project.KAKAO_SDK_GROUP, name: 'usermgmt', version: project.KAKAO_SDK_VERSION
+    //구글 places로 여행갈 나라,도시 찾기
+    implementation 'com.google.android.libraries.places:places:1.0.0'
+
+    //프로필 이미지를 url로 부르기
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    //구글맵
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    //fcm과 토큰을 이용해 noti를 띄울때 사용
+    implementation 'com.google.firebase:firebase-messaging:17.6.0'
+    //implementation 'com.android.volley:volley:1.1.1'
+    //cluster
+    implementation 'com.google.maps.android:android-maps-utils:0.5'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    //google translate
+    implementation 'com.google.cloud:google-cloud-translate:1.49.0'
+
+    /*//권한 관리 라이브러리
+    implementation 'gun0912.ted:tedpermission:2.2.1'
+    //이미지 선택 라이브러리
+    implementation 'gun0912.ted:tedbottompicker:1.0.4'*/
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    //채팅내용 기기에 저장
+    //implementation 'com.google.code.gson:gson:2.8.5'
+    //implementation 'org.webrtc:google-webrtc:1.0.22672'
+    //implementation 'org.webrtc:google-webrtc:libwebrtc_19324:1.0.22672@arr'
+
+
+    //영상통화
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.5'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    implementation 'pub.devrel:easypermissions:1.1.3'
+    implementation('io.socket:socket.io-client:1.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    /* implementation('io.socket:socket.io-client:0.8.3') {
+        // excluding org.json which is provided by Android
+        exclude group: 'org.json', module: 'json'
+    }*/
+    implementation files('libs/autobanh.jar')
+    implementation files('libs/base_java.jar')
+    implementation files('libs/libjingle_peerconnection.jar')
+
+
+    /*//arcore
+    implementation 'com.google.ar:core:1.6.0'*/
+    /*//sceneform
+    implementation "com.google.ar.sceneform.ux:sceneform-ux:1.6.0"*/
+    /* // Alternatively, use ArSceneView without the UX dependency.
+    implementation 'com.google.ar.sceneform:core:1.6.0'*/
+    //animation sceneform
+    //implementation "com.google.ar.sceneform:animation:1.9.0"
+
+    //unity vuforia project to androidstudio
+    implementation(name: 'core-1.6.0', ext: 'aar')
+    implementation(name: 'VuforiaWrapper', ext: 'aar')
+
+    //스트리밍 서버
+    implementation 'com.wowza.gocoder.sdk.android:com.wowza.gocoder.sdk:2.0.0@aar'
+    //스트리밍 예제
+    //implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //이미지 필터
+    implementation 'com.karumi:dexter:4.1.0'
+    implementation 'info.androidhive:imagefilters:1.0.7'
+
+    //이더리움 지갑 주소를 위한 qr코드 생성, 인식
+    implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
+    //이더리움 전송을 위한 것.
+    implementation 'org.web3j:core:3.3.1-android'
+    implementation 'com.googlecode.json-simple:json-simple:1.1'
+    implementation 'com.google.zxing:core:3.3.2'
+    implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
+    implementation 'org.bitcoinj:bitcoinj-core:0.14.7'
+    implementation project(path: ':librarysdkew')
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //여행지 정할시 여행지의 iso 나라 코드 받아오기
+    implementation project(path: ':geonames-1.1.14')
+    implementation project(path: ':jdom-1.0')
+
+}
+
+
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+sceneform.asset('sampledata/models/andy.obj',
+        'default',
+        'sampledata/models/andy.sfa',
+        'src/main/res/raw/andy')

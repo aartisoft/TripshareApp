@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cirimg_receiver"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_message_received" />
+
+    <TextView
+        android:id="@+id/name_tx_receiver"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="8dp"
+        android:maxWidth="100dp"
+        android:text=""
+        android:textColor="@color/darkgray"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_message_received" />
+
+    <ImageView
+        android:adjustViewBounds="true"
+        android:id="@+id/img_receiver"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="8dp"
+        android:maxWidth="200dp"
+        android:maxHeight="250dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_tx_receiver" />
+
+    <TextView
+        android:id="@+id/img_time_receiver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:text="11:40"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_receiver"
+        app:layout_constraintLeft_toRightOf="@+id/img_receiver" />
+    <TextView
+        android:id="@+id/message_receiver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/messagetoyou"
+        android:maxWidth="200dp"
+        android:padding="8dp"
+        android:text=""
+        android:textColor="#FFFFFFFF"
+        app:layout_constraintLeft_toRightOf="@+id/cirimg_receiver"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_tx_receiver" />
+    <!--android:background="@drawable/rounded_rectangle_orange"-->
+    <TextView
+        android:id="@+id/time_receiver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:text="11:40"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/message_receiver"
+        app:layout_constraintLeft_toRightOf="@+id/message_receiver" />
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/linear_message_received"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_gravity="left"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="2"
+            android:background="@color/gray" />
+
+
+
+        <TextView
+            android:id="@+id/ymd_message_received"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="2019년 12월 12일 금 "
+            android:textColor="@color/darkgray"
+            android:textSize="12dp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_gravity="right"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="2"
+            android:background="@color/gray" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/goout_linear_message"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/gray"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@+id/linear_message_received"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/goout_tx_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="누가 나갔습니다."
+            android:textSize="13dp" />
+
+    </LinearLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>

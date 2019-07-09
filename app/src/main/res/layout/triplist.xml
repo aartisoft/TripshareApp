@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/triplist_linearlayout"
+    android:orientation="vertical"
+    android:layout_marginLeft="30dp"
+    android:layout_marginStart="30dp"
+    android:layout_marginRight="30dp"
+    android:layout_marginEnd="30dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/triplist_Tripcity_Textview"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="여행 도시,국가 "
+                 />
+
+
+            <TextView
+                android:id="@+id/triplist_term_Textview"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:padding="5dp"
+
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="여행 시작,종료,총 일수 " />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

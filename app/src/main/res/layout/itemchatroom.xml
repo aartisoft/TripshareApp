@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/con_layout_chatroom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cirimg_chatroom"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/two_conlayout_chatroom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/twofristcirimg_chatroom"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/two_secondcirimg_chatroom"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/twofristcirimg_chatroom"
+            app:layout_constraintTop_toBottomOf="@+id/twofristcirimg_chatroom" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/three_conlayout_chatroom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/threefristcirimg_chatroom"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/threesecondcirimg_chatroom"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="4dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/threefristcirimg_chatroom" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/threethirdcirimg_chatroom"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toEndOf="@+id/threesecondcirimg_chatroom"
+        app:layout_constraintTop_toBottomOf="@+id/threefristcirimg_chatroom" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/four_conlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/four_fristcirimg_chatroom"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="4dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/four_second_cirimg_chatroom"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toEndOf="@+id/four_fristcirimg_chatroom"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/four_third_cirimg_chatroom"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="4dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/four_fristcirimg_chatroom" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/four_fourth_cirimg_chatroom"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toEndOf="@+id/four_fristcirimg_chatroom"
+        app:layout_constraintTop_toBottomOf="@+id/four_second_cirimg_chatroom" />
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/name_chatroom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxWidth="200dp"
+        android:maxLines="1"
+        android:text="is suzin and seung possible? "
+        android:textColor="@color/darkgray"
+        android:textSize="16dp"
+        app:layout_constraintLeft_toRightOf="@+id/cirimg_chatroom"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lastmessage_chatroom"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginLeft="20dp"
+        android:ellipsize="end"
+        android:maxWidth="150dp"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:text="hi man, how are u?"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toRightOf="@+id/cirimg_chatroom"
+        app:layout_constraintTop_toBottomOf="@+id/name_chatroom" />
+
+    <TextView
+        android:id="@+id/total_tx_Chatroom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:text="8"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/name_chatroom"
+        app:layout_constraintTop_toTopOf="@+id/name_chatroom" />
+
+    <TextView
+        android:id="@+id/datetime_tx_Chatroom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="8dp"
+        android:text="2019년 1월 20일 "
+        android:textColor="#000000"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total_tx_Chatroom" />
+
+</android.support.constraint.ConstraintLayout>

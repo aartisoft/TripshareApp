@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".Trip.ItineraryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <fragment
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map_itinerary"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            tools:context=".Trip.ItineraryActivity"/>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_itinerary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabGravity="center"
+        app:tabMode="scrollable"
+        android:background="@color/colorPrimary"
+        app:tabTextColor="@color/white"
+        app:tabSelectedTextColor="@color/colorAccent"
+        app:tabIndicatorColor="@color/colorAccent"
+        app:tabIndicatorHeight="3dp">
+
+
+
+    </android.support.design.widget.TabLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:weightSum="5"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_weight="4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+          <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView_itinerary"
+                android:layout_width="match_parent"
+                android:background="#FFFFFFFF"
+                android:layout_height="match_parent"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+            </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFFFF"
+        android:layout_weight="1"
+        android:gravity="right">
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        app:pressedTranslationZ="12dp"
+        android:id="@+id/plus_floating_itinerary"
+        android:src="@drawable/ic_add_black_24dp"
+        android:backgroundTint="@color/colorPrimary"/>
+        </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="여행 일정을 추가해 주세요"
+       android:id="@+id/request_TextView_Itinerary"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/log_lottie_Itinerary"
+        android:layout_gravity="center"/>
+</FrameLayout>

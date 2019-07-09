@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "542802833874",
+    "firebase_url": "https://tripshare-69a5d.firebaseio.com",
+    "project_id": "tripshare-69a5d",
+    "storage_bucket": "tripshare-69a5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542802833874:android:a8df7cff49fbe25d",
+        "android_client_info": {
+          "package_name": "com.example.tripshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "542802833874-n6j5u1j0b0fujl4e3ka0n9ov924nd7l2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tripshare",
+            "certificate_hash": "13323cafdfef5c4b72772af3bf9ef3a18d5477b0"
+          }
+        },
+        {
+          "client_id": "542802833874-f47cm43i5f7r1l6cil69r36846j0g8ov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLoEQjSU77XVJkWaLlzo35cY-GJM_ISl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "542802833874-f47cm43i5f7r1l6cil69r36846j0g8ov.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_friend"
+        android:icon="@drawable/ic_friends"
+        android:enabled="true"
+        android:title=""
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_chatroom"
+        android:icon="@drawable/ic_chat_bubble_outline_black_24dp"
+        android:title=""
+        android:enabled="true"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_video"
+        android:icon="@drawable/ic_videocam_black_24dp"
+        android:title=""
+        android:enabled="true"
+        app:showAsAction="ifRoom"/>
+</menu>

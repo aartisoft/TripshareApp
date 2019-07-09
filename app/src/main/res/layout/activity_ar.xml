@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Ar.ArActivity">
+
+
+    <ImageView
+        android:layout_margin="15dp"
+        android:layout_gravity="center"
+        android:src="@drawable/dragonimg"
+        android:id="@+id/ex_dragon_Ar"
+        android:layout_width="250dp"
+        android:layout_height="125dp"/>
+
+    <TextView
+        android:layout_gravity="center"
+        android:text="드래곤"
+        android:textSize="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <ImageView
+        android:id="@+id/ar_movie_Ar"
+        android:layout_width="105dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:src="@drawable/movie_parasite" />
+
+    <TextView
+        android:layout_gravity="center"
+        android:text="예고편"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/ar_portal_Ar"
+        android:layout_width="250dp"
+        android:layout_height="125dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:src="@drawable/portal" />
+
+    <TextView
+        android:layout_gravity="center"
+        android:text="포탈"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

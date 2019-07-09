@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.tripshare">
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- 스트리밍 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-permission
+        android:name="android.permission.UPDATE_DEVICE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false"/>
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <!--<uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />-->
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen.multitouch"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen.multitouch.distinct"
+        android:required="false" />
+
+   <!-- <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />-->
+  <!--  <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="false" />-->
+
+    <application
+        android:name=".LoginRegister.GlobalApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/ic_action_name"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/ic_action_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Token.CheckWallet"></activity>
+        <activity android:name=".Token.WalletPassword" />
+
+        <receiver
+            android:name=".TripTalk.NetworkChangeReceiver"
+            android:label="NetworkChangeReceiver">
+            <intent-filter>
+                <action
+                    android:name="android.net.conn.CONNECTIVITY_CHANGE"
+                    tools:ignore="BatteryLife" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".imageFilter.FilterActivity"
+            android:theme="@style/AppTheme.NoActionBar.FullScreen" />
+        <activity
+            android:name=".LiveStream.PracticeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <!--
+ android:theme="@style/AppTheme.Call"
+            android:windowSoftInputMode="adjustPan"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="fullSensor"
+        -->
+        <activity android:name=".LiveStream.StreamingActivity" />
+        <activity
+            android:name=".LiveStream.CameraActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/camera_example_title"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".LiveStream.EventActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/event_example_title"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".LiveStream.PlayerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/stream_player_title"
+            android:screenOrientation="fullSensor" />
+        android:theme="@style/AppThemeNobar"
+        android:windowSoftInputMode="adjustPan"
+        <activity
+            android:name=".LiveStream.graphics.BitmapOverlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/mp4_broadcast_title"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".LiveStream.mp4.MP4CaptureActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/mp4_capture_title"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".LiveStream.audio.AudioMeterActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/audio_meter_title"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".LiveStream.graphics.TextOverlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/text_overlay_title"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".LiveStream.graphics.OpenGLActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/opengl_title"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".LiveStream.ScreenshotActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/screenshot_title"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".TripTalk.PlayALiveActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".TripTalk.OnAirActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppThemeNobar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Ar.UnityPlayerActivity"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+            android:hardwareAccelerated="false"
+            android:launchMode="singleTask"
+            android:process=":unityplayer"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="unityplayer.UnityActivity"
+                android:value="true" />
+        </activity>
+
+        <meta-data
+            android:name="unity.build-id"
+            android:value="636f66fe-ae8d-4e66-a83e-cd6c72f8dca3" />
+        <meta-data
+            android:name="unity.splash-mode"
+            android:value="0" />
+        <meta-data
+            android:name="unity.splash-enable"
+            android:value="True" />
+
+        <activity
+            android:name=".Ar.ArAnimatedActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true" />
+        <activity android:name=".Ar.ArFirstActivity" />
+        <activity android:name=".Ar.ArActivity" />
+
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="required"
+            tools:replace="android:value" />
+
+        <activity
+            android:name=".androidwebrtc.main.AppRTCMainActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".androidwebrtc.call.CallActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="fullUser"
+            android:theme="@style/AppTheme.Call" />
+        <activity android:name=".TripTalk.VideoCallActivity" />
+        <activity
+            android:name=".TripTalk.PictureActivity"
+            android:theme="@style/AppThemeNobar" />
+        <activity android:name=".TripTalk.ChooseFriends" />
+
+        <service
+            android:name=".TripTalk.TalkService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".TripTalk.BootReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".TripTalk.MessageActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="adjustResize" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.tripshare.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
+
+        <activity android:name=".TripTalk.ChatroomActivity" />
+        <activity
+            android:name=".TripTalk.ProfileActivity"
+            android:theme="@style/AppThemeNobar" />
+        <activity android:name=".TripTalk.PlusfriendActivity" />
+        <activity android:name=".TripTalk.ChatActivity" />
+        <activity android:name=".Trip.HotplaceActivity" />
+        <activity android:name=".Trip.SearchActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".Trip.DirectionActivity"
+            android:label="@string/title_activity_direction" />
+        <activity
+            android:name=".Trip.MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".WhereWhen.HowlongActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".WhereWhen.LocationAutocompleteActivity" />
+        </activity>
+        <activity android:name=".Trip.ItineraryActivity" />
+        <activity
+            android:name=".Trip.TourtoolActivity"
+            android:theme="@style/AppThemefortool" />
+        <activity android:name=".ProfileEdit" />
+        <activity
+            android:name=".LoadingActivity"
+            android:theme="@style/AppThemeNobar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginRegister.RegistrationActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".LoginRegister.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".LoginRegister.SNSloginActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".WhereWhen.LocationAutocompleteActivity"
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+
+        <service android:name=".Fcm.MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".Fcm.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

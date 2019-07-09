@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--눌린 이후의 상태 enable false-->
+<item android:color="@color/colorPrimaryDark" android:state_checked="true" />
+    <!--한번 눌릴 때 상태-->
+    <item android:color="@color/colorPrimaryDark" android:state_enabled="false" android:state_pressed="true"/>
+    <item android:color="@color/white"/>
+</selector>
